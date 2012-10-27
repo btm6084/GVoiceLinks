@@ -8,6 +8,7 @@ function run() {
                     if(spans[x].innerText.match(/https?:/)) {
                         var link = document.createElement('a');
                         link.setAttribute('href', spans[x].innerText.match(/(https?:\/\/[^ ]*)/)[0]);
+                        link.setAttribute('target', "_blank");
                         link.innerHTML = "Link";
 
                         spans[x].parentNode.appendChild(link);
@@ -15,6 +16,7 @@ function run() {
                     else if(spans[x].innerText.match(/www[.]/)) {
                         var link = document.createElement('a');
                         link.setAttribute('href', "http://" + spans[x].innerText.match(/(www[.][^ ]*)/)[0]);
+                        link.setAttribute('target', "_blank");
                         link.innerHTML = "Link";
 
                         spans[x].parentNode.appendChild(link);
